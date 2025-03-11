@@ -33,22 +33,6 @@
     2. **Configurar o Prisma **:
       Assim como no Next.js,  você deve configurar a conexão com o banco no arquivo `prisma/schema.prisma`. A mesma configuração de banco utilizada no Next.js será compartilhada.
 
-    3. **Usar o Prisma Client **:
-      Após rodar as migrations no Next.js, você pode usar o Prisma Client  para interagir com o banco de dados. Por exemplo, no Nest, você pode criar um serviço para acessar o banco:
-
-      ```ts
-      import { PrismaService } from './prisma.service'; // Exemplo de Serviço Prisma
-
-      @Injectable()
-      export class AppService {
-        constructor(private prisma: PrismaService) {}
-
-        async getUsers() {
-          return this.prisma.user.findMany(); // Exemplo de consulta no Prisma
-        }
-      }
-      ```
-
     O Prisma vai ser compartilhado entre o Next.js e o NestJS, pois ambos estarão conectando ao mesmo banco de dados e utilizando o mesmo esquema (models) definidos no arquivo `schema.prisma`.
 
 
